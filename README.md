@@ -16,6 +16,24 @@ To run this image:
 docker run -p 80:80/tcp "ddepaoli3/helloworld"
 ```
 
+To build this dockerfile
+```
+docker build --rm --tag ddepaoli3/helloworld .
+```
+
+To push this image to dockerhub
+```
+docker login --username=ddepaoli3
+docker push
+```
+
+To push this image to AWS ECR
+```
+docker tag ddepaoli3/helloworld <aws_account_id>.dkr.ecr.<region>.amazonaws.com/helloworld
+aws ecr get-login --profile profilename --region eu-central-1 #then execute the output command
+docker push
+```
+
 Dockerhub link: https://hub.docker.com/repository/docker/ddepaoli3/helloworld/general
 
 Github link: https://github.com/ddepaoli3/docker-helloworld
